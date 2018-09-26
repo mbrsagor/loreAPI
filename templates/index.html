@@ -1,0 +1,52 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Rest API</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body ng-app="MyApp" ng-controller="AppCtrl">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 ">
+          <h2>Student Table</h2><br/>
+          <p ng-bind="erroe"></p>
+          <form name="studentFrom" ng-submit="postDataToServer">
+            <input type="text" ng-model="ngname" name="name" id="name" placeholder="Student name" class="form-control" required> <br/>
+            <input type="number" ng-model="ngroll" name="roll" id="roll" placeholder="Student roll" class="form-control" required> <br/>
+            <button type="submit" ng-click="addUser()" class="btn btn-success" ng-disabled="studentFrom.$invalid">Add User</button>
+          </form>
+          <br/>
+
+          <h3>You may search from here</h3>
+          <input type="text" class="form-control" ng-model="ngSearch" placeholder="Search...">
+
+          <br/><br/>
+          <p>Data show using REST API and Angular js</p>
+          <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Roll</th>
+              <th>update</th>
+              <th>Delete</th>
+            </tr>
+            <tr ng-repeat="user in dataList | filter: ngSearch ">
+              <td ng-bind="user.id"></td> 
+              <td ng-bind="user.name"></td>
+              <td ng-bind="user.roll"></td>
+              <td><button class="btn btn-success btn-xs" ng-click="UpdateUser(user.id)">Update</button></td>
+              <td><button class="btn btn-danger btn-xs" ng-click="delete(user.id)">Delete</button></td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>
+
