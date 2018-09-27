@@ -24,15 +24,16 @@ angular.module('MyApp', [])
       headers: { 'Content-Type': 'application/json' }
     }).then(function success(response){
       $scope.dataList.push(response.data);
+      $scope.succeesMesage = "Data insert successfully";
     });
   }
 
 
  // update data to database
- $scope.UpdateUser = function(id){
+ $scope.UpdateUser = function(user){
   $http({
     method  : 'put',
-    url     : 'api/update'+id,
+    url     : 'api/update/'+"id",
     data    : {
       name  : $scope.ngname,
       roll  : $scope.ngroll
@@ -48,7 +49,13 @@ $scope.delete = function(id){
   headers: { 'Content-Type': 'application/json' }
 }).then(function success(response){
   $scope.dataList.splice(response.id, 1);
+  $scope.succeesMesage = "Data Delete successfully";
 });
+}
+
+// Remove message
+$scope.removeMessageBtn = function(){
+  $scope.succeesMesage = "";
 }
 
 });

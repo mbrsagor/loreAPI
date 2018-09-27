@@ -20,6 +20,14 @@
           </form>
           <br/>
 
+          
+          <!-- Data success message -->
+          <div class="alert alert-success alert-dismissible" ng-if="succeesMesage">
+              <a href="#" class="close" ng-click="removeMessageBtn()" aria-label="close">&times;</a>
+              <p ng-bind="succeesMesage"></p>
+            </div>
+
+
           <h3>You may search from here</h3>
           <input type="text" class="form-control" ng-model="ngSearch" placeholder="Search...">
 
