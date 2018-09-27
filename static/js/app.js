@@ -30,14 +30,21 @@ angular.module('MyApp', [])
 
 
  // update data to database
- $scope.UpdateUser = function(user){
+ $scope.UpdateUser = function(index){
+  var obj = $scope.dataList[index];
+  var id = obj.id;
+  $scope.ngname = obj.name,
+  $scope.ngroll = obj.roll,
   $http({
     method  : 'put',
-    url     : 'api/update/'+"id",
+    url     : 'api/update/'+id,
     data    : {
       name  : $scope.ngname,
       roll  : $scope.ngroll
-    }
+    },
+    headers: { 'Content-Type': 'application/json' }
+  }).then(function success(response){
+    $scope.dataList.push(response.data);
   });
 }
 

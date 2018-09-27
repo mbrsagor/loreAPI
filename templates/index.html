@@ -45,7 +45,7 @@
               <td ng-bind="user.id"></td> 
               <td ng-bind="user.name"></td>
               <td ng-bind="user.roll"></td>
-              <td><button class="btn btn-success btn-xs" ng-click="UpdateUser(user.id)">Update</button></td>
+              <td><button class="btn btn-success btn-xs" ng-click="UpdateUser($index)">Update</button></td>
               <td><button class="btn btn-danger btn-xs" ng-click="delete(user.id)">Delete</button></td>
             </tr>
           </table>
