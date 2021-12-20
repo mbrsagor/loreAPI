@@ -15,6 +15,17 @@ source venv/bin-activate
 pip install -r requirements.txt 
 ```
 
+
+##### Install Tweepy
+```
+pip install tweepy
+```
+
+## Run:
+```bash
+python -i main.py 
+```
+
 ### Bot demo example:
 ```python
 import tweepy
