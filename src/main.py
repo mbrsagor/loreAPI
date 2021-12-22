@@ -1,8 +1,8 @@
 import tweepy
-from src.credential import access_token, access_token_secret, API_key, API_secret_key
+from src.credential import ACCESS_TOKEN, SECRET_ACCESS_TOKEN, API_key, API_SECRET_KEY
 
-auth = tweepy.OAuthHandler(API_key, API_secret_key)
-auth.set_access_token(access_token, access_token_secret)
+auth = tweepy.OAuthHandler(API_key, API_SECRET_KEY)
+auth.set_access_token(ACCESS_TOKEN, SECRET_ACCESS_TOKEN)
 api = tweepy.API(auth)
 
 try:

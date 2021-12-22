@@ -1,4 +1,6 @@
-access_token = "XXXXXXX"
-access_token_secret = "XXXXXXXX"
 API_key = "XXXXXXX"
-API_secret_key = "XXXXXXXX"
+API_SECRET_KEY = "XXXXXXXX"
+BEARER_TOKEN = "XXXXX"
+
+ACCESS_TOKEN = "XXXXXXX"
+SECRET_ACCESS_TOKEN = "XXXXXXXX"
